@@ -1,0 +1,8 @@
+liczba=int(input("Podaj liczbe naturalna"))
+print(type(liczba))
+lista=[]
+while liczba>0:
+    #print(liczba%2)
+    lista.append(liczba%2)
+    liczba=liczba//2
+print(lista[: : -1])
