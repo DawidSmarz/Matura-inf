@@ -1,0 +1,85 @@
+1. otwarcie pliku z danymi w pythonie
+
+with open("zadanie_63/ciagi.txt", "r") as plik:
+    dane = [int(x) for x in plik]
+
+print(dane)
+
+* open("zadanie_63/ciagi.txt", "r") - otwiera plik
+    r - read
+    w - write
+    a - append (dopisanie)
+    
+* open("zadanie_63/ciagi.txt", "r") as plik - otwiera plik i przypisz nazwe plik
+
+* for x in plik: - czyta linijka po linijce
+    x = "123\n"
+    x = "456\n"
+    x = "789\n"
+    \n - koniec linii
+
+* int(x) - zmienia x na liczbe calkowita
+    int("123\n") → 123
+
+
+plik ciagi.txt
+       ↓
+   open(...)
+       ↓
+ czytanie linii
+       ↓
+ "123\n"  → int() → 123
+ "456\n"  → int() → 456
+ "789\n"  → int() → 789
+       ↓
+[123, 456, 789]
+       ↓
+   print(dane)
+
+
+2. for liczba in dane:
+    x = str(liczba)
+    dlugosc_ciagu = len(x)
+
+* x = str(liczba) - zamiana na stringa
+* dlugosc_ciagu = len(x) - długość ciągu
+
+3.  czy_podzielna = dlugosc_ciagu % 2
+    if czy_podzielna == 0:
+        polowa_dlugosci_ciagu = dlugosc_ciagu // 2
+
+* czy_podzielna = dlugosc_ciagu % 2 - modulo (reszta z dzielenia) przez 2
+*    if czy_podzielna == 0:
+        polowa_dlugosci_ciagu = dlugosc_ciagu // 2 - sprawdza czy reszta = 0, jezeli true to dzielenie całkowite długości ciągu
+
+4.      lewa = x[:polowa_dlugosci_ciagu]
+        prawa = x[polowa_dlugosci_ciagu:]
+
+* x[początek:koniec]
+
+*Lewa:
+    pozycja:  0 1 2 3 4 5
+    znak:     1 2 3 1 2 3
+              └─────┘
+               x[:3]
+    lewa = "123"
+
+*Prawa:
+    pozycja:  0 1 2 3 4 5
+    znak:     1 2 3 1 2 3
+                    └─────┘
+                    x[3:]
+    prawa = "123"
+
+5.  if lewa == prawa:
+        print(x)
+
+* jezeli lewa = prawa to wyswietl x
+
+
+
+
+
+
+
+
