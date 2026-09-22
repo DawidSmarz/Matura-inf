@@ -24,4 +24,11 @@ najwieksza = max(dane_parzyste)
 # print(dane_parzyste)
 print(najwieksza)
 wynik.write("Zadanie 5.1\n")
-wynik.write(str(najwieksza))
+wynik.write(str(najwieksza) + '\n')
+
+#zadanie 5.2
+
+wynik.write("Zadanie 5.2\n")
+for element_p in dane_str:
+    if element_p == element_p[ : : -1]:
+        wynik.write(element_p + '\n') 
