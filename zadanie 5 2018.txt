@@ -1,0 +1,52 @@
+f = open("liczby.txt")
+wynik = open("wynik5.txt", "w")
+dane = []
+for element in f:
+    # print(element)
+    element = element.strip()
+    dane.append(element)
+# print(dane)
+
+parzyste = []
+for element in dane:
+    if int(element) % 2 == 0:
+        parzyste.append(int(element))
+# print(parzyste)
+
+# print(max(parzyste))
+
+naj_wartosc = max(parzyste)
+wynik.write("Zadanie 5.1 \n" + str(naj_wartosc))
+
+# if element_p == element_p[ : : -1]:
+
+#zadanie 2
+wynik.write("\n Zadanie 5.2 \n ")
+for element in dane:
+    if element == element[ : : -1]:
+        # print(element)    
+        wynik.write(element + "\n")
+    
+#zadanie 3
+
+def suma_cyfr(liczba):
+    suma = 0
+    for znak in liczba:
+        suma = suma + int(znak)
+    return suma
+    
+# print(suma_cyfr("346"))
+wynik.write("\n Zadanie 5.3 \n ")
+for element in dane:
+    if suma_cyfr(element) > 30:
+        # print(element)
+        wynik.write(element + "\n")
+
+dane_suma_cyfr = []
+for element in dane:
+    dane_suma_cyfr.append(suma_cyfr(element))
+    
+# print(dane_suma_cyfr)
+
+print(sum(dane_suma_cyfr))
+wynik.write(sum(dane_suma_cyfr) + "\n")
